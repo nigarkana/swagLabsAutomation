@@ -1,4 +1,5 @@
 import {test, expect} from '@playwright/test'
+import { type } from 'os';
 
 test ("Login Page Test", async({page})=>{
     //Navigate the URL
@@ -6,8 +7,18 @@ test ("Login Page Test", async({page})=>{
 
     //Enter User Name
     await page.locator("#user-name").fill("standard_user");
+    expect(page).toHaveTitle("Swag Labs");
 
     //Enter Password
+    await page.locator("#password").fill("secret_sauce");
+
+    //Click Login button
+    await page.getByRole("button", "type = submit").click();
+    //expect(page).textContent("Products");
+
+    //Asserts
+  
+    
     
 
 
