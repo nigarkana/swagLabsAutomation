@@ -13,7 +13,7 @@ test ("Login Page Test", async({page})=>{
     await page.locator("#password").fill("secret_sauce");
 
     //Click Login button
-    await page.getByRole("button", "type = submit").click();
+    await page.getByRole("button").click();
     //expect(page).textContent("Products");
 
     //Asserts
